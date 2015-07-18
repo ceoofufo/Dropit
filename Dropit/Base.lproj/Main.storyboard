@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7o-46-0Fp">
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7o-46-0Fp" customClass="BezierPathView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -26,6 +26,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="H7o-46-0Fp"/>
@@ -36,6 +37,9 @@
                                 <include reference="H7o-46-0Fp"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="U2w-QV-NOQ" appends="YES" id="CaG-Hi-bk2"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="gameView" destination="H7o-46-0Fp" id="PS2-bX-N6q"/>
@@ -47,6 +51,11 @@
                         <action selector="tap:" destination="vXZ-lx-hvc" id="FrJ-IH-66n"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="U2w-QV-NOQ">
+                    <connections>
+                        <action selector="pan:" destination="vXZ-lx-hvc" id="Ta4-ee-a6g"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
